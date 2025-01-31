@@ -61,10 +61,10 @@ async def send_start(client: Client, message: Message):
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(message.from_user.id, message.from_user.first_name)
     buttons = [[
-        InlineKeyboardButton("❣️ Developer", url = "https://t.me/kingvj01")
+        InlineKeyboardButton("❣️ Developer", url = "https://t.me/Stylish_Star2")
     ],[
-        InlineKeyboardButton('🔍 sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ', url='https://t.me/vj_bot_disscussion'),
-        InlineKeyboardButton('🤖 ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ', url='https://t.me/vj_botz')
+        InlineKeyboardButton('🔍 sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ', url='https://t.me/RM_Discussion'),
+        InlineKeyboardButton('🤖 ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ', url='https://t.me/RM_Botz')
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
     await client.send_message(
@@ -117,7 +117,7 @@ async def save(client: Client, message: Message):
                 acc = Client("saverestricted", session_string=user_data, api_hash=API_HASH, api_id=API_ID)
                 await acc.connect()
             except:
-                batch_temp.IS_BATCH[message.from_user.id] = True
+                batch_temp.IS_BATCH[message.from_user.id] = False
                 return await message.reply("**Your Login Session Expired. So /logout First Then Login Again By - /login**")
             
             # private
